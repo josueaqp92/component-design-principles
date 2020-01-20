@@ -301,11 +301,72 @@
       </ul>
     </section>
     <section>
-      <h2>Principio de ComposiRvidad</h2>
+      <h2>Principio de Compositividad</h2>
       <small>Diseña tus componentes de manera que se
         maximicen las oportunidades de composición
         con otros componentes presentes en el
         contexto de uso.</small>
+    </section>
+    <section>
+      <ul>
+        <li>Diseñar para Componer: A diferencia de lo que ocurre con las etiquetas estándar que funcionan con alta
+          autonomía, los componentes Web se centran en capturar esquemas de composición.</li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Asegura La Escalabilidad: Los componentes deben ofrecer una experiencia funcional de usuario cerrada
+          pero a la vez mantener la recep2vidad a nuevas composiciones.
+          <pre>
+            <code class="xml hljs" data-trim contenteditable>
+              // no
+              event.stopPropagation();
+
+              // si
+              event.stopPropagation();
+              this.$event('click', e);
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Busca La Continuidad: Una composición correcta es aquella en la  que no es posible discernir las partes
+          implicadas ya que no presenta fisuras de  continuidad visuales o interactivas.</li>
+      </ul>
+      <div style="text-align: center">
+        <img src="img/Screenshot%20at%20Jan%2020%2013-54-19.png" alt="">
+      </div>
+    </section>
+    <section>
+      <ul>
+        <li>Abstrae La Composición: Se deben imponer las menores restricciones sobre los elementos de una  composición para aumentar el número de
+          posibles candidatos a par2cipantes.</li>
+        <pre>
+            <code class="xml hljs" data-trim contenteditable>
+              <drawer-panel>
+                <div drawer> Drawer panel... </div>
+                <div main> Main panel... </div>
+              </drawer-panel>
+            </code>
+        </pre>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Encapsula La Composición: Cuando encapsulamos pretendemos capturar interacciones soportadas en base
+          a las composiciones que conectan los componentes.</li>
+      </ul>
+      <pre>
+            <code class="xml hljs" data-trim contenteditable>
+              <select-profile>
+                <profile profile="1"></profile>
+                <profile profile="2"></profile>
+                <profile profile="3"></profile>
+              </select-profile>
+            </code>
+        </pre>
     </section>
     <section>
       <h2><span class="vue">Gracias!</span></h2>
