@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Entonces, ¿Qué es Vue?</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <!-- presentation -->
+    <section data-transition="zoom">
+      <img src="https://desarrolloweb.com/storage/article_featured_images/IUnkkpXLaMV4Rh2JIxK3QlTktbRzIkGb927wq1LB.jpeg" />
+      <h3>Principios en Diseño de Components</h3>
+    </section>
+    <!-- Slide 1 - Myself -->
+    <section >
+      <div class="black-bg">
+        <table>
+          <tr>
+            <td>
+              <img src="img/myself.jpg" alt="Josué Arambide" class="me" style="width: 300px;">
+            </td>
+            <td style="vertical-align: top">
+              <h3>Josué Arambide</h3>
+              <p>- Desarrollador frontend en TCS</p>
+              <p>- Consultor de Tecnologia en Teczelt brazil</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div>
+                <h3>Social</h3>
+                <p>- github.com/josueaqp92/</p>
+                <p>- josue@josuearambide.com</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>¿Por qué web components?</h2>
+    </section>
+    <section>
+      <ul>
+        <li>Encapsulación de la lógica</li>
+        <li>Comportamiento adaptativo</li>
+        <li>Gestión de la Evolución Centralizada</li>
+        <ul>
+          <li>Se adapta evolutivamente bajo demanda</li>
+        </ul>
+        <li>Orientada a la vista</li>
+        <li>Construcción compositiva</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Principios de Diseño</h2>
+    </section>
+    <section>
+      <ul>
+        <li><b>Dominio</b></li>
+        <li><b>Abstracción</b></li>
+        <li><b>Acoplamiento débil</b></li>
+        <li><b>Reutilización</b></li>
+        <li><b>Composición</b></li>
+        <li><i style="font-style: italic;">Adaptación</i></li>
+        <li><i style="font-style: italic;">Encapsulación</i></li>
+        <li><i style="font-style: italic;">Evolución</i></li>
+        <li><i style="font-style: italic;">Estandarización</i></li>
+        <li><i style="font-style: italic;">Contextualización</i></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Principio	de	Diseño	Centrado en	el	Dominio</h2>
+      <small>Comienza siempre realizando una adecuada
+        división de responsabilidades en el ámbito de
+        tu dominio y garantizando la ausencia de
+        huecos y solapamientos entre componentes.</small>
+    </section>
+    <section>
+      <ul>
+        <li>
+          No debemos tener componentes aislados ya que estos deben pertenecer a una familia
+          <pre>
+              <code class="xml hljs" data-trim contenteditable>
+                <mark></mark>
+              </code>
+          </pre>
+        </li>
+        <div style="text-align: center">
+          <img src="img/Screenshot_1.png" />
+        </div>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>
+          Lo prioritario es tener claro qué capacidades quieres cubrir con tu componentes y qué
+          otras dejarás conscientemente fuera.
+          <pre>
+              <code class="xml hljs" data-trim contenteditable>
+                <google-map></google-map>
+                <google-map-directions></google-map-directions>
+                <google-map-marker></google-map-marker>
+                <google-map-search></google-map-search>
+              </code>
+          </pre>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="vue">Gracias!</span></h2>
+    </section>
+  </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    hash: true,
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      { src: 'plugin/notes/notes.js', async: true },
+      { src: 'plugin/highlight/highlight.js', async: true }
+    ]
+  });
+</script>
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">
+</body>
+</html>
