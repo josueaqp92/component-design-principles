@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Entonces, ¿Qué es Vue?</title>
+  <title>Principios en Diseño de Components</title>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/reveal.css">
@@ -115,7 +115,7 @@
     <section>
       <ul>
         <li>
-          Lo prioritario es tener claro qué capacidades quieres cubrir con tu componentes y qué
+          Lo prioritario es tener claro qué capacidades quieres cubrir con tus componentes y qué
           otras dejarás conscientemente fuera.
           <pre>
               <code class="xml hljs" data-trim contenteditable>
@@ -128,7 +128,185 @@
         </li>
       </ul>
     </section>
-
+    <section>
+      <ul>
+        <li>Antes de empezar la construcción de tus componentes determina el ámbito preciso de responsabilidades
+          que quieres cubrir con ella.</li>
+        <li>Asegúrate de que la construcción de tus componentes sólo aborden competencias propias del dominio al que
+          pertenece.</li>
+      </ul>
+      <div style="text-align: center">
+        <img src="img/Screenshot%20at%20Jan%2020%2008-52-39.png">
+      </div>
+    </section>
+    <section>
+      <ul>
+        <li>Fomentar cohesión entre el dominio (altamente relacionados)</li>
+      </ul>
+      <div style="text-align: center;">
+        <img src="img/Screenshot%20at%20Jan%2020%2009-03-02.png" alt="">
+      </div>
+    </section>
+    <section>
+      <h2>Complamiento Débil</h2>
+      <small>Cuando construyas un componente asegúrate
+        de minimizar el número de dependencias
+        existentes y de mantener un diseño agnós2co
+        de las caracterís2cas de las mismas.</small>
+    </section>
+    <section>
+      <ul>
+        <li>
+          Demos minimizar al máximo el número de dependencias o tener dependencias opcionales
+          <pre>
+              <code class="xml hljs" data-trim contenteditable>
+                <google-signin
+                  clientid="..."
+                  scopes="profile"
+                  role="button">
+                </google-signin>
+              </code>
+          </pre>
+        </li>
+        <li>Cada dependencia significa un riesgo de propagación de errores</li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>
+          Las dependencias obligatorias deben ser explícitas
+          <pre>
+              <code class="xml hljs" data-trim contenteditable>
+                <modal-information>
+                  <modal-body>
+                  </modal-body>
+                </modal-information>
+              </code>
+          </pre>
+        </li>
+        <li>Hacer implicitas las dependencias opcionales
+          <ul>
+            <li>La propagación de eventos
+              <pre>
+                  <code class="xml hljs" data-trim contenteditable>
+                    <profile @click="onProfileClick"></profile>
+                  </code>
+              </pre>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Buscar comunicación indirecta <small>(Los esquema de indirección siempre
+          fomentan el desacoplamiento ya que
+          permiten segmentar la comunicación.)</small>
+          <pre>
+          <code class="xml hljs" data-trim contenteditable>
+            <profile-details :profile="profile"></profile-details>
+            <profile-movements :profile="profile"></profile-movements>
+          </code>
+      </pre>
+        </li>
+        <ul>
+          <li>La comunicación no debe estar ligada estrictamente (bus)</li>
+        </ul>
+      </ul>
+    </section>
+    <section>
+      <h2>Principio de Abstracción</h2>
+      <small>Asegúrate siempre de que tus componentes
+        operan al nivel más elevado de abstracción
+        posible dentro de los contextos de
+        colaboración en que participen.</small>
+    </section>
+    <section>
+      <ul>
+        <li>Debe haber un nivel de abstracción centrado al contexto en el que se trabaja</li>
+        <li>Opera Al Mayor Nivel De Abstracción Posible
+          <ul>
+            <li>Al definir un componente en un nivel de abstracción dado se condiciona su
+              número de potenciales colaboradores.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Construir abstracción de datos
+          <pre>
+            <code class="xml hljs" data-trim contenteditable>
+              <payment-affiliation payment=””></payment-affiliation>
+              <payment-affiliation-confirmation payment=”"></payment-affiliation-confirmation>
+            </code>
+          </pre>
+        </li>
+        <li>Seguir el polimorfismo POO</li>
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li>Abstrae Para Componer: Diseñar al nivel adecuado de abstracción permite hacer una división de responsabilidades sobre el dominio que fomenta las
+          oportunidades de composición.</li>
+        <li>Abstrae Para Extender: La definición de abstracciones permite articular puntos de extensión variante donde nuevos componentes puedan
+          incluirse como sustitutos.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Principio de Reutilización</h2>
+      <small>Asegúrate de maximizar siempre las posibilidades de reutilización de tus componentes dentro del dominio al que
+        pertenecen.</small>
+    </section>
+    <section>
+      <ul>
+        <li>Se debe estudiar los requisitos de los demás componentes
+        </li>
+        <li>Se debe respetar el dominio y no afectarlo</li>
+      </ul>
+      <pre>
+          <code class="xml hljs" data-trim contenteditable>
+            <products-layout></products-layout>
+          </code>
+      </pre>
+    </section>
+    <section>
+      <ul>
+        <li>Debe evitar el acoplamiento fuerte</li>
+      </ul>
+      <pre>
+        <code class="xml hljs" data-trim contenteditable>
+          <animation>
+            <animation-keframe>
+              <animation-slide :profile=""></animation-slide>
+            </animation-keframe>
+          </animation>
+        </code>
+      </pre>
+    </section>
+    <section>
+      <ul>
+        <li>Verificar el nivel de granularidad, ya que se pone en riesgo la reutilización
+          <pre>
+            <code class="xml hljs" data-trim contenteditable>
+              <ibk-icon></ibk-icon> -> alto nivel de reuso, sin contexto
+              <ibk-page></ibk-page> -> alto nivel de reuso, tiene contexto
+              <ibk-paypal-affiliation></ibk-paypal-affiliation> -> poco reuso, alto contexto
+            </code>
+          </pre>
+        </li>
+        <li>Perseguir la declaratividad</li>
+        <li>Evitar convenciones propias</li>
+        <li>Usar estándares en el grupo</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Principio de ComposiRvidad</h2>
+      <small>Diseña tus componentes de manera que se
+        maximicen las oportunidades de composición
+        con otros componentes presentes en el
+        contexto de uso.</small>
+    </section>
     <section>
       <h2><span class="vue">Gracias!</span></h2>
     </section>
