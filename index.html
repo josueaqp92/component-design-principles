@@ -42,7 +42,8 @@
             </td>
             <td style="vertical-align: top">
               <h3>Josué Arambide</h3>
-              <p>- Desarrollador frontend en TCS</p>
+              <p>- Líder técnico en PRIMA AFP</p>
+              <p>- Arquitecto frontend en PRIMA AFP</p>
               <p>- Consultor de Tecnologia en Teczelt brazil</p>
             </td>
           </tr>
@@ -148,16 +149,16 @@
       </div>
     </section>
     <section>
-      <h2>Complamiento Débil</h2>
+      <h2>Acomplamiento Débil</h2>
       <small>Cuando construyas un componente asegúrate
         de minimizar el número de dependencias
-        existentes y de mantener un diseño agnós2co
-        de las caracterís2cas de las mismas.</small>
+        existentes y de mantener un diseño agnóstico
+        de las características de las mismas.</small>
     </section>
     <section>
       <ul>
         <li>
-          Demos minimizar al máximo el número de dependencias o tener dependencias opcionales
+          Debemos minimizar al máximo el número de dependencias o tener dependencias opcionales
           <pre>
               <code class="xml hljs" data-trim contenteditable>
                 <google-signin
@@ -184,7 +185,7 @@
               </code>
           </pre>
         </li>
-        <li>Hacer implicitas las dependencias opcionales
+        <li>Hacer implícitas las dependencias opcionales
           <ul>
             <li>La propagación de eventos
               <pre>
@@ -224,9 +225,9 @@
     <section>
       <ul>
         <li>Debe haber un nivel de abstracción centrado al contexto en el que se trabaja</li>
-        <li>Opera Al Mayor Nivel De Abstracción Posible
+        <li>Opera al mayor nivel de abstracción posible
           <ul>
-            <li>Al definir un componente en un nivel de abstracción dado se condiciona su
+            <li>Al definir un componente en un nivel de abstracción dado, se condiciona su
               número de potenciales colaboradores.</li>
           </ul>
         </li>
@@ -247,9 +248,9 @@
     </section>
     <section>
       <ul>
-        <li>Abstrae Para Componer: Diseñar al nivel adecuado de abstracción permite hacer una división de responsabilidades sobre el dominio que fomenta las
+        <li><b>Abstrae para componer:</b> Diseñar al nivel adecuado de abstracción permite hacer una división de responsabilidades sobre el dominio, lo que fomenta las
           oportunidades de composición.</li>
-        <li>Abstrae Para Extender: La definición de abstracciones permite articular puntos de extensión variante donde nuevos componentes puedan
+        <li><b>Abstrae para extender:</b> La definición de abstracciones permite articular puntos de extensión variante donde nuevos componentes puedan
           incluirse como sustitutos.</li>
       </ul>
     </section>
@@ -309,14 +310,14 @@
     </section>
     <section>
       <ul>
-        <li>Diseñar para Componer: A diferencia de lo que ocurre con las etiquetas estándar que funcionan con alta
+        <li><b>Diseñar para componer:</b> A diferencia de lo que ocurre con las etiquetas estándar que funcionan con alta
           autonomía, los componentes Web se centran en capturar esquemas de composición.</li>
       </ul>
     </section>
     <section>
       <ul>
-        <li>Asegura La Escalabilidad: Los componentes deben ofrecer una experiencia funcional de usuario cerrada
-          pero a la vez mantener la recep2vidad a nuevas composiciones.
+        <li><b>Asegura la escalabilidad:</b> Los componentes deben ofrecer una experiencia funcional de usuario cerrada
+          pero a la vez mantener la receptividad a nuevas composiciones.
           <pre>
             <code class="xml hljs" data-trim contenteditable>
               // no
@@ -332,7 +333,7 @@
     </section>
     <section>
       <ul>
-        <li>Busca La Continuidad: Una composición correcta es aquella en la  que no es posible discernir las partes
+        <li><b>Busca la continuidad:</b> Una composición correcta es aquella en la  que no es posible discernir las partes
           implicadas ya que no presenta fisuras de  continuidad visuales o interactivas.</li>
       </ul>
       <div style="text-align: center">
@@ -341,8 +342,8 @@
     </section>
     <section>
       <ul>
-        <li>Abstrae La Composición: Se deben imponer las menores restricciones sobre los elementos de una  composición para aumentar el número de
-          posibles candidatos a par2cipantes.</li>
+        <li><b>Abstrae la composición:</b> Se deben imponer las menores restricciones sobre los elementos de una  composición para aumentar el número de
+          posibles candidatos a participantes.</li>
         <pre>
             <code class="xml hljs" data-trim contenteditable>
               <drawer-panel>
@@ -355,7 +356,7 @@
     </section>
     <section>
       <ul>
-        <li>Encapsula La Composición: Cuando encapsulamos pretendemos capturar interacciones soportadas en base
+        <li><b>Encapsula la composición:</b> Cuando encapsulamos pretendemos capturar interacciones soportadas en base
           a las composiciones que conectan los componentes.</li>
       </ul>
       <pre>
